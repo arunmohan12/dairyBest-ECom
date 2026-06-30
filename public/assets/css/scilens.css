@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'Almarai-Light';
+    src: url('fonts/Almarai-Light.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'Almarai-Light', sans-serif !important;
+}
+
+.logo {
+    max-width: 35%;
+}
+
+.text-transparent {
+    color: rgba(240, 248, 255, 0);
+}
+
+.homme-banner-sub {
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.3px;
+}
+
+.homme-banner-heading {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 88px;
+    text-transform: capitalize;
+  }
+
+@media (max-width: 1023.99px) {
+    .homme-banner-sub {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 1.1px;
+    }
+    .homme-banner-heading {
+        font-size: 30px;
+        line-height: 50px;
+      }
+    
+}
+
+@media (max-width: 767.98px) {
+    .homme-banner-sub {
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 0.1px;
+        margin-top: 20px;
+    }
+    .homme-banner-heading {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      .logo {
+        max-width: 50%;
+        margin-left: 10px;
+    }
+}
+
+.banner-button{
+    background-color: transparent !important;
+    border: 1px solid !important;
+    letter-spacing: 0.8px !important;
+    font-weight: 10 !important;
+    font-size: 12 !important;
+}
+.banner-button:hover {
+    background-color: #25721F !important; /* Light green */
+    color: rgb(255, 255, 255) !important; /* Optional for better contrast */
+    border-color: #25721F !important;     /* Light green border */
+
+}
+.logo-footer{
+    max-width: 100%;
+}
+.category-heading {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+  }
+
+  .top-banner{
+   background-color: #25721F;
+  }
+  .header-gap{
+    margin-left: 35%;
+  }
+  .text-button-uppercase {
+    font-size: 12px;
+  }
+  .home-banner-res{
+    height: 100vh;
+  }
+
+  
+  /* Updated CSS */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block; /* or appropriate display value */
+  }
+  
+  .image-container img {
+    transition: transform 0.5s ease;
+    display: block; /* removes extra space under image */
+  }
+  
+  .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .image-container:hover img {
+    transform: scale(1.1);
+  }
+  
+  .image-container:hover::before {
+    animation: light-glance 0.8s ease-out;
+  }
+  
+  @keyframes light-glance {
+    0% {
+      left: -75%;
+    }
+    100% {
+      left: 125%;
+    }
+  }
+.half-screen-style{
+    height: 50vh;
+    padding-top: 20px;
+}
+.full-screen-style{
+    height: 100vh;
+}
+
+.testimonial-block{
+    margin-top: 20px;
+}
+.brand-margin{
+  margin-top: 25%;
+}
+.list-pagination a.active {
+  background-color: rgb(0, 0, 0); /* White background */
+  color: rgb(255, 255, 255);            /* Black text */
+  /* You might want to add some padding or borders for better appearance */
+  padding: 5px 10px;
+  border: 1px solid black;
+  text-decoration: none; /* Remove underline for links */
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Optional: Style for non-active links to ensure consistency */
+.list-pagination a {
+  color: #000000; /* Example: default blue for links */
+  padding: 10px 30px;
+  text-decoration: none;
+  border: 1px solid black; /* Keep same border size as active to prevent shifting */
+  border-radius: 10px;
+}
+
+.list-pagination a:hover {
+  background-color: #25721F; /* Light grey on hover for non-active links */
+  color: #ffffff;
+  border: 1px solid #25721F; 
+}
+
+/* Style for disabled arrows */
+.list-pagination span {
+  color: #ccc; /* Grey out disabled arrows */
+  padding: 5px 10px;
+  pointer-events: none; /* Prevent interaction */
+}
+.button-enquiry {
+  font-size: 14px;
+  line-height: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: var(--black);
+  padding: 4px 25px; /* Adjusted padding for better vertical alignment */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all ease 0.4s;
+
+  /* --- ADD THESE LINES --- */
+  display: flex; /* Aligns children (text and icon) in a row */
+  align-items: center; /* Vertically centers the text and icon */
+  gap: 8px; /* Adds a nice space between the text and the icon */
+}
+
+.enquiry-button {
+  background-color: transparent !important;
+  border: 1px solid #000 !important; /* Added color to border for visibility */
+  letter-spacing: 0.8px !important;
+  font-weight: 400 !important; /* Corrected from 10 to a valid CSS value */
+  font-size: 12px !important; /* Corrected from 12 to 12px */
+}
+
+.product-desc-top-margin{
+  margin-top: 15.25rem;
+}
+.enquiry-button:hover .icon-whatsapp {
+  color: #ffffff !important;
+}
+.enquiry-button:hover {
+  background-color: #25721F !important; /* f5f5f5 is a nice off-white */
+  color: #ffffff !important;
+  border: 1px solid #25721F !important; /* Added color to border for visibility */
+
+}
+
+.product-item .product-main .product-infor .list-color, .product-item .product-main .product-infor .list-color-image {
+  position: relative !important;
+  opacity: 1 !important;
+}
+
+.text-title-product-description {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.product-total-price {
+  font-size: 26px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.subcategory-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.subcategory-list.show {
+  opacity: 1;
+}
+
