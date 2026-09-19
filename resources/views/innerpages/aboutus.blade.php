@@ -7,7 +7,7 @@
                             <div class="text-content">
                                 <div class="heading2 text-center">About Us</div>
                                 <div class="link flex items-center justify-center gap-1 caption1 mt-3">
-                                    <a href="index.html">Homepage</a>
+                                    <a href="{{ route('home') }}">Homepage</a>
                                     <i class="ph ph-caret-right text-sm text-secondary2"></i>
                                     <div class="text-secondary2 capitalize">About Us</div>
                                 </div>
@@ -18,196 +18,193 @@
             </div>
         </div>
 
-        <div class="about md:pt-20 pt-10">
-            <div class="about-us-block">
-                <div class="container">
-                    <div class="text flex items-center justify-center">
-                        <div class="content md:w-5/6 w-full">
-                            <div class="heading3 text-center">Our Story</div>
-                            <div class="body1 text-center md:mt-7 mt-5">
-                            La Mira was created with a passion for delivering high-quality dessert ingredients that help
-businesses and creators produce outstanding sweets and beverages.
-We focus on taste, consistency, and innovation to support cafés, bakeries, restaurants, and
-dessert professionals.
-                            </div>
+        <section class="about-split-section">
+            <header class="about-section-header about-reveal">
+                <div class="caption1 text-button-uppercase tracking-[0.2em]">La Mira by Dairy Best</div>
+                <h2 class="heading3 md:mt-3 mt-2">Love at First Taste</h2>
+            </header>
+            <div class="about-split-grid">
+                <div class="about-split-image about-reveal-left">
+                    <img
+                        src="{{ asset('assets/images/about-page-images/chocolate-hazelnut-cream.png') }}"
+                        alt="La Mira chocolate hazelnut cream with artisan donuts"
+                    />
+                </div>
+                <div class="about-split-content about-reveal-right">
+                    <div class="about-split-inner">
+                        <div class="body1 text-secondary">
+                            La Mira was created with a passion for delivering premium dessert ingredients that help cafés, bakeries, restaurants, and dessert professionals create unforgettable experiences.
+                        </div>
+                        <div class="body1 text-secondary md:mt-4 mt-3">
+                            From velvety fruit purees and rich sauces to flavored creams and ice cream mixes, every product is crafted for consistency, taste, and the kind of indulgence your customers remember.
                         </div>
                     </div>
-                    <!-- <div class="list-img grid sm:grid-cols-3 gap-[30px] md:pt-20 pt-10">
-                        <div class="bg-img">
-                            <img src="./assets/images/other/about-us1.png" alt="bg-img" class="w-full rounded-[30px]" />
-                        </div>
-                        <div class="bg-img">
-                            <img src="./assets/images/other/about-us2.png" alt="bg-img" class="w-full rounded-[30px]" />
-                        </div>
-                        <div class="bg-img">
-                            <img src="./assets/images/other/about-us3.png" alt="bg-img" class="w-full rounded-[30px]" />
-                        </div>
-                    </div> -->
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="benefit-block md:pt-20 pt-10">
-            <div class="container">
-                <div class="list-benefit grid items-start lg:grid-cols-4 grid-cols-2 gap-[30px]">
-                    <div class="benefit-item flex flex-col items-center justify-center">
-                        <i class="icon-phone-call lg:text-7xl text-5xl"></i>
-                        <div class="heading6 text-center mt-5">24/7 Customer Service</div>
-                        <div class="caption1 text-secondary text-center mt-3">We're here to help you with any questions or concerns you have, 24/7.</div>
-                    </div>
-                    <div class="benefit-item flex flex-col items-center justify-center">
-                        <i class="icon-return lg:text-7xl text-5xl"></i>
-                        <div class="heading6 text-center mt-5">14-Day Money Back</div>
-                        <div class="caption1 text-secondary text-center mt-3">If you're not satisfied with your purchase, simply return it within 14 days for a refund.</div>
-                    </div>
-                    <div class="benefit-item flex flex-col items-center justify-center">
-                        <i class="icon-guarantee lg:text-7xl text-5xl"></i>
-                        <div class="heading6 text-center mt-5">Our Guarantee</div>
-                        <div class="caption1 text-secondary text-center mt-3">We stand behind our products and services and guarantee your satisfaction.</div>
-                    </div>
-                    <div class="benefit-item flex flex-col items-center justify-center">
-                        <i class="icon-delivery-truck lg:text-7xl text-5xl"></i>
-                        <div class="heading6 text-center mt-5">Shipping worldwide</div>
-                        <div class="caption1 text-secondary text-center mt-3">We ship our products worldwide, making them accessible to customers everywhere.</div>
+        <section class="about-split-section about-split-section--surface">
+            <header class="about-section-header about-reveal">
+                <div class="caption1 text-button-uppercase tracking-[0.18em]">Our Story</div>
+                <h2 class="heading3 md:mt-3 mt-2">Crafted for creators who care about every detail</h2>
+            </header>
+            <div class="about-split-grid about-split-grid--reverse">
+                <div class="about-split-image about-reveal-right">
+                    <img
+                        src="{{ asset('assets/images/about-page-images/milk-chocolate-sauce.png') }}"
+                        alt="La Mira milk chocolate sauce"
+                    />
+                </div>
+                <div class="about-split-content about-reveal-left">
+                    <div class="about-split-inner">
+                        <div class="body1 text-secondary">
+                            Behind every La Mira product is a commitment to quality ingredients, reliable performance in professional kitchens, and flavors that elevate both sweet and savory creations.
+                        </div>
+                        <div class="body1 text-secondary md:mt-4 mt-3">
+                            Through Dairy Best Foodstuff Trading LLC, we proudly serve businesses across the UAE and beyond — from boutique patisseries to high-volume production kitchens.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="about-split-section">
+            <header class="about-section-header about-reveal">
+                <div class="caption1 text-button-uppercase tracking-[0.18em]">Signature Sauces</div>
+                <h2 class="heading3 md:mt-3 mt-2">Rich finishes that transform the ordinary</h2>
+            </header>
+            <div class="about-split-grid">
+                <div class="about-split-image about-reveal-left">
+                    <img
+                        src="{{ asset('assets/images/about-page-images/pistachio-sauce.png') }}"
+                        alt="La Mira pistachio sauce with filled donut"
+                    />
+                </div>
+                <div class="about-split-content about-reveal-right">
+                    <div class="about-split-inner">
+                        <div class="body1 text-secondary">
+                            Our premium dessert sauces — from pistachio and milk chocolate to fruit-forward favorites — deliver smooth texture, vibrant color, and balanced sweetness.
+                        </div>
+                        <div class="body1 text-secondary md:mt-4 mt-3">
+                            Perfect for drizzling, glazing, filling, and plating, they help you create signature looks without compromising on speed or consistency.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-split-section about-split-section--surface">
+            <header class="about-section-header about-reveal">
+                <div class="caption1 text-button-uppercase tracking-[0.18em]">Complete Solutions</div>
+                <h2 class="heading3 md:mt-3 mt-2">From mix to masterpiece</h2>
+            </header>
+            <div class="about-split-grid about-split-grid--reverse">
+                <div class="about-split-image about-reveal-right">
+                    <img
+                        src="{{ asset('assets/images/about-page-images/mango-collection.png') }}"
+                        alt="La Mira mango ice cream mix and mango sauce"
+                    />
+                </div>
+                <div class="about-split-content about-reveal-left">
+                    <div class="about-split-inner">
+                        <div class="body1 text-secondary">
+                            La Mira goes beyond toppings. Our ice cream powder mixes, fruit purees, syrups, and flavored creams give you the building blocks for entire menus.
+                        </div>
+                        <div class="body1 text-secondary md:mt-4 mt-3">
+                            Milkshakes, gelato, plated desserts, beverages, and bakery fillings — all with the same premium standard your brand deserves.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-split-section">
+            <header class="about-section-header about-reveal">
+                <div class="caption1 text-button-uppercase tracking-[0.18em]">Chocolate Hazelnut Sauce</div>
+                <h2 class="heading3 md:mt-3 mt-2">A classic indulgence, elevated</h2>
+            </header>
+            <div class="about-split-grid">
+                <div class="about-split-image about-reveal-left">
+                    <img
+                        src="{{ asset('assets/images/about-page-images/chocolate-hazelnut-sauce.png') }}"
+                        alt="La Mira chocolate hazelnut sauce on pancakes"
+                    />
+                </div>
+                <div class="about-split-content about-reveal-right">
+                    <div class="about-split-inner">
+                        <div class="body1 text-secondary">
+                            A timeless favorite for breakfast menus, desserts, and beverage toppers — rich, smooth, and made to impress from the first pour.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-split-section about-split-section--surface">
+            <header class="about-section-header about-reveal">
+                <div class="caption1 text-button-uppercase tracking-[0.18em]">Flavored Creams & Fillings</div>
+                <h2 class="heading3 md:mt-3 mt-2">Built for artisan baking</h2>
+            </header>
+            <div class="about-split-grid about-split-grid--reverse">
+                <div class="about-split-image about-reveal-right">
+                    <img
+                        src="{{ asset('assets/images/about-page-images/pistachio-sauce-studio.png') }}"
+                        alt="La Mira pistachio sauce studio presentation"
+                    />
+                </div>
+                <div class="about-split-content about-reveal-left">
+                    <div class="about-split-inner">
+                        <div class="body1 text-secondary">
+                            Smooth, stable creams designed for donuts, pastries, and layered desserts — the kind of filling that keeps your display looking as good as it tastes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefit-block md:py-20 py-14">
+            <div class="container">
+                <header class="about-section-header about-reveal">
+                    <div class="caption1 text-button-uppercase tracking-[0.18em]">Why La Mira</div>
+                    <h2 class="heading3 md:mt-3 mt-2">Why professionals choose La Mira</h2>
+                </header>
+                <div class="list-benefit grid items-start lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[30px] md:mt-12 mt-8">
+                    <div class="benefit-item flex flex-col items-center justify-center text-center px-4 about-reveal" data-about-delay="0">
+                        <i class="icon-guarantee lg:text-7xl text-5xl"></i>
+                        <div class="heading6 mt-5">Premium Quality</div>
+                        <div class="caption1 text-secondary mt-3">Consistent flavor, texture, and performance batch after batch.</div>
+                    </div>
+                    <div class="benefit-item flex flex-col items-center justify-center text-center px-4 about-reveal" data-about-delay="100">
+                        <i class="icon-leaves lg:text-7xl text-5xl"></i>
+                        <div class="heading6 mt-5">Versatile Range</div>
+                        <div class="caption1 text-secondary mt-3">Sauces, creams, purees, syrups, and mixes for every menu style.</div>
+                    </div>
+                    <div class="benefit-item flex flex-col items-center justify-center text-center px-4 about-reveal" data-about-delay="200">
+                        <i class="icon-delivery-truck lg:text-7xl text-5xl"></i>
+                        <div class="heading6 mt-5">Trusted Supply</div>
+                        <div class="caption1 text-secondary mt-3">Reliable distribution through Dairy Best across the UAE and region.</div>
+                    </div>
+                    <div class="benefit-item flex flex-col items-center justify-center text-center px-4 about-reveal" data-about-delay="300">
+                        <i class="icon-phone-call lg:text-7xl text-5xl"></i>
+                        <div class="heading6 mt-5">Partner Support</div>
+                        <div class="caption1 text-secondary mt-3">Dedicated support for businesses looking to grow with premium ingredients.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <div class="container">
-            <div class="newsletter-block md:py-20 sm:py-14 py-10 sm:px-8 px-6 sm:rounded-[32px] rounded-3xl flex flex-col items-center bg-green md:mt-20 mt-10">
-                <div class="heading3 text-white text-center">Sign up and get 10% off</div>
-                <div class="text-white text-center mt-3">Sign up for early sale access, new in, promotions and more</div>
-                <div class="input-block lg:w-1/2 sm:w-3/5 w-full h-[52px] sm:mt-10 mt-7">
-                    <form class="w-full h-full relative">
-                        <input type="email" placeholder="Enter your e-mail" class="caption1 w-full h-full pl-4 pr-14 rounded-xl border border-line" required />
-                        <button class="button-main bg-green text-black absolute top-1 bottom-1 right-1 flex items-center justify-center">Subscribe</button>
-                    </form>
+            <div class="newsletter-block md:py-20 sm:py-14 py-10 sm:px-8 px-6 sm:rounded-[32px] rounded-3xl flex flex-col items-center bg-green md:mb-16 mb-10 about-reveal">
+                <header class="about-section-header about-reveal">
+                    <div class="caption1 text-button-uppercase tracking-[0.18em]">Get Started</div>
+                    <h2 class="heading3 md:mt-3 mt-2">Ready to elevate your menu?</h2>
+                </header>
+                <div class="text-center mt-3 md:w-2/3">
+                    Discover the full La Mira range or speak with our team about wholesale and business partnerships.
                 </div>
-            </div>
-        </div>
-
-        <div class="instagram-block md:pt-20 pt-10">
-            <div class="">
-                <div class="container">
-                    <div class="heading3 text-center">Anvogue On Instagram</div>
-                    <div class="text-center mt-3">#Anvougetheme</div>
-                </div>
-                <div class="list-instagram overflow-hidden md:mt-10 mt-6">
-                    <div class="swiper swiper-instagram-three">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/" target="_blank" class="item relative block overflow-hidden">
-                                    <img src="./assets/images/instagram/0.png" alt="0" class="h-full w-full duration-500 relative" />
-                                    <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-                                        <div class="icon-instagram text-2xl text-black"></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/" target="_blank" class="item relative block overflow-hidden">
-                                    <img src="./assets/images/instagram/1.png" alt="1" class="h-full w-full duration-500 relative" />
-                                    <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-                                        <div class="icon-instagram text-2xl text-black"></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/" target="_blank" class="item relative block overflow-hidden">
-                                    <img src="./assets/images/instagram/2.png" alt="2" class="h-full w-full duration-500 relative" />
-                                    <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-                                        <div class="icon-instagram text-2xl text-black"></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/" target="_blank" class="item relative block overflow-hidden">
-                                    <img src="./assets/images/instagram/3.png" alt="3" class="h-full w-full duration-500 relative" />
-                                    <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-                                        <div class="icon-instagram text-2xl text-black"></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/" target="_blank" class="item relative block overflow-hidden">
-                                    <img src="./assets/images/instagram/4.png" alt="4" class="h-full w-full duration-500 relative" />
-                                    <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-                                        <div class="icon-instagram text-2xl text-black"></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/" target="_blank" class="item relative block overflow-hidden">
-                                    <img src="./assets/images/instagram/5.png" alt="5" class="h-full w-full duration-500 relative" />
-                                    <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-                                        <div class="icon-instagram text-2xl text-black"></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/" target="_blank" class="item relative block overflow-hidden">
-                                    <img src="./assets/images/instagram/10.png" alt="10" class="h-full w-full duration-500 relative" />
-                                    <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-                                        <div class="icon-instagram text-2xl text-black"></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/" target="_blank" class="item relative block overflow-hidden">
-                                    <img src="./assets/images/instagram/yoga5.png" alt="yoga5" class="h-full w-full duration-500 relative" />
-                                    <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-                                        <div class="icon-instagram text-2xl text-black"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="brand-block md:py-[60px] py-[32px]">
-            <div class="container">
-                <div class="list-brand">
-                    <div class="swiper swiper-list-brand">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="brand-item relative flex items-center justify-center h-[36px]">
-                                    <img src="./assets/images/brand/1.png" alt="1" class="h-full w-auto duration-500 relative object-cover" />
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item relative flex items-center justify-center h-[36px]">
-                                    <img src="./assets/images/brand/2.png" alt="2" class="h-full w-auto duration-500 relative object-cover" />
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item relative flex items-center justify-center h-[36px]">
-                                    <img src="./assets/images/brand/3.png" alt="3" class="h-full w-auto duration-500 relative object-cover" />
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item relative flex items-center justify-center h-[36px]">
-                                    <img src="./assets/images/brand/4.png" alt="4" class="h-full w-auto duration-500 relative object-cover" />
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item relative flex items-center justify-center h-[36px]">
-                                    <img src="./assets/images/brand/5.png" alt="5" class="h-full w-auto duration-500 relative object-cover" />
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item relative flex items-center justify-center h-[36px]">
-                                    <img src="./assets/images/brand/6.png" alt="6" class="h-full w-auto duration-500 relative object-cover" />
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item relative flex items-center justify-center h-[36px]">
-                                    <img src="./assets/images/brand/7.png" alt="7" class="h-full w-auto duration-500 relative object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex flex-wrap items-center justify-center gap-4 sm:mt-10 mt-7">
+                    <a href="{{ route('innerpages.Allproducts') }}" class="button-main bg-white text-black">Explore Products</a>
+                    <a href="{{ route('innerpages.contact-us') }}" class="button-main bg-transparent border border-white text-white">Contact Us</a>
                 </div>
             </div>
         </div>

@@ -10,17 +10,56 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 class IndexController extends Controller
 {
+    private function aboutCarouselSlides(): array
+    {
+        return [
+            [
+                'image' => 'chocolate-hazelnut-cream.png',
+                'title' => 'Flavored Creams & Fillings',
+                'caption' => 'Smooth, stable creams for donuts, pastries, and layered desserts.',
+            ],
+            [
+                'image' => 'milk-chocolate-sauce.png',
+                'title' => 'Milk Chocolate Sauce',
+                'caption' => 'Rich and creamy classic perfection for every menu.',
+            ],
+            [
+                'image' => 'pistachio-sauce.png',
+                'title' => 'Pistachio Sauce',
+                'caption' => 'Premium dessert topping with a vibrant pistachio profile.',
+            ],
+            [
+                'image' => 'mango-collection.png',
+                'title' => 'Mango Collection',
+                'caption' => 'Ice cream mixes and fruit-forward sauces for summer menus.',
+            ],
+            [
+                'image' => 'chocolate-hazelnut-sauce.png',
+                'title' => 'Chocolate Hazelnut Sauce',
+                'caption' => 'A timeless indulgence for breakfast, desserts, and beverages.',
+            ],
+            [
+                'image' => 'pistachio-sauce-studio.png',
+                'title' => 'Studio Collection',
+                'caption' => 'Ingredients styled for professional kitchens and patisseries.',
+            ],
+        ];
+    }
 
     public function loadIndexDatas()
     {
-        $categories = Mcategory::getAllCategories();
-        $brands = mBrands::all();
-        $products = mProducts::orderByDesc('pid')
-            ->inRandomOrder()
-            ->take(8)
+        $categories = Mcategory::query()
+            ->whereHas('products')
+            ->with(['products' => function ($query) {
+                $query->orderByDesc('pid');
+            }])
+            ->orderBy('name')
             ->get();
+        $brands = mBrands::all();
+        $products = mProducts::takeWithExistingImages(8);
+        $aboutCarouselSlides = $this->aboutCarouselSlides();
 
-        return view('welcome', compact('categories', 'brands', 'products'));
+        return view('welcome', compact('categories', 'brands', 'products', 'aboutCarouselSlides'));
     }
 
     public function getProductsHtmlByType(Request $request)
@@ -29,18 +68,30 @@ class IndexController extends Controller
         $products = collect();
 
         if ($type === 'new-products') {
-            $products = mProducts::orderByDesc('pid')->take(8)->get();
+            $products = mProducts::takeWithExistingImages(8);
         } elseif ($type === 'other-products') {
-            $newProductIds = mProducts::orderByDesc('pid')->take(8)->pluck('pid');
-            $products = mProducts::whereNotIn('pid', $newProductIds)
-                ->inRandomOrder()
-                ->take(8)
-                ->get();
+            $newProductIds = mProducts::takeWithExistingImages(8)->pluck('pid');
+            $products = mProducts::takeWithExistingImages(8, mProducts::query()
+                ->whereNotIn('pid', $newProductIds)
+                ->inRandomOrder());
         }
 
         $html = view('partials.product-item', ['products' => $products])->render();
 
         return response()->json(['html' => $html]);
+    }
+
+    private function applyListingFilters($query, Request $request)
+    {
+        if ($request->filled('category')) {
+            $query->where('category_code', $request->category);
+        }
+
+        if ($request->filled('subcategory')) {
+            $query->where('subcategory_id', $request->subcategory);
+        }
+
+        return $query;
     }
 
     public function loadProductsByBrand(Request $request, $brandName)
@@ -52,9 +103,10 @@ class IndexController extends Controller
         if (!$brand) {
             abort(404, 'Brand not found');
         }
-        $products = DB::table('m_products')
-            ->where('bname', $brand->name)
-            ->paginate(6);
+        $query = mProducts::query()->where('bname', $brand->name);
+        $query = $this->applyListingFilters($query, $request);
+
+        $products = mProducts::orderByImageAvailability($query)->paginate(6)->withQueryString();
 
         if ($request->ajax()) {
             return view('partials.listingpagination', compact('products'))->render();
@@ -84,15 +136,20 @@ class IndexController extends Controller
 
     public function loadAllProducts(Request $request)
     {
-        $products = DB::table('m_products')
-            ->orderBy('pid', 'desc')
-            ->paginate(6);
+        $query = mProducts::query();
+        $query = $this->applyListingFilters($query, $request);
+
+        $products = mProducts::orderByImageAvailability($query)->paginate(6)->withQueryString();
 
         if ($request->ajax()) {
             return view('partials.listingpagination', compact('products'))->render();
         }
 
-        $categories = collect();
+        $categories = Mcategory::with(['subcategories' => function ($q) {
+                $q->withCount('products');
+            }])
+            ->withCount('products')
+            ->get();
         $brands = mBrands::withCount('products')->get();
         $totalProductsCount = mProducts::count();
 
@@ -109,7 +166,7 @@ class IndexController extends Controller
             abort(404, 'Brand not found');
         }
 
-        $product = DB::table('m_products')
+        $product = mProducts::query()
             ->where('slugid', $slugid)
             ->where('bname', $brand->name)
             ->first();
@@ -118,32 +175,15 @@ class IndexController extends Controller
             abort(404, 'Product not found');
         }
 
-        $productImages = [];
+        $productImages = $product->galleryUrls();
 
-        if ($product->productimage) {
-
-            $productImages[] = asset('assets/images/products/' . Str::slug($product->bname)  . '/' . $product->productimage);
-        }
-
-
-        if ($product->otherimages) {
-            $otherImageFilenames = explode(',', $product->otherimages);
-            foreach ($otherImageFilenames as $filename) {
-                $filename = trim($filename);
-                if (!empty($filename)) {
-                    $productImages[] = asset('assets/images/products/' . Str::slug($product->bname) . '/' . $filename);
-                }
-            }
-        }
-
-
-        $previousProduct = DB::table('m_products')
+        $previousProduct = mProducts::query()
             ->where('bname', $brand->name)
             ->where('pid', '<', $product->pid)
-            ->orderBy('pid', 'desc')
+            ->orderByDesc('pid')
             ->first();
 
-        $nextProduct = DB::table('m_products')
+        $nextProduct = mProducts::query()
             ->where('bname', $brand->name)
             ->where('pid', '>', $product->pid)
             ->orderBy('pid', 'asc')
@@ -168,7 +208,7 @@ class IndexController extends Controller
             $query->whereIn('brand_id', $request->brands);
         }
 
-        $products = $query->paginate(12);
+        $products = mProducts::orderByImageAvailability($query)->paginate(12);
 
         return view('partials.listingpagination', compact('products'))->render();
     }

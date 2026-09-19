@@ -31,7 +31,7 @@
 
                             </div>
                             <div class="sub-img absolute left-0 top-0 w-full h-full z-[-1]">
-                                <img src="{{asset('assets/images/home/banner-02.jpg')}}" alt="yoga2" class="w-full h-full object-cover" />
+                                <img src="{{ asset('assets/images/home/Banner-02.jpg') }}" alt="yoga2" class="w-full h-full object-cover" />
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                                 <a href="" class="button-main banner-button md:mt-8 mt-3">Show products</a>
                             </div>
                             <div class="sub-img absolute left-0 top-0 w-full h-full z-[-1]">
-                                <img src="{{asset('assets/images/home/banner-03.jpg')}}" alt="yoga1" class="w-full h-full object-cover" />
+                                <img src="{{ asset('assets/images/home/Banner-03.jpg') }}" alt="yoga1" class="w-full h-full object-cover" />
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
 <div class="trending-block style-six md:pt-20 pt-10">
     <div class="container">
         <div class="heading3 text-center">Explore Our Categories</div>
-        <div class="list-trending relative section-swiper-navigation style-small-border style-outline md:mt-10 mt-6">
+        <div class="list-trending home-category-carousel relative section-swiper-navigation style-small-border style-outline md:mt-10 mt-6">
             <div class="swiper-button-prev"></div>
             <div class="swiper swiper-list-trending h-full relative">
                 <div class="swiper-wrapper">
@@ -71,19 +71,18 @@
 
                     $translationkey = str_replace(' ', '_', $category->name);
                     @endphp
-                    <div class="swiper-slide" data-id="{{ $category->id }}">
-                        <a href="javascript:void(0)" class="trending-item block relative cursor-pointer">
-                            <div class="bg-img rounded-full overflow-hidden">
-                                <!-- <img src="./assets/images/avatar/{{ $loop->index + 1 }}.png" alt="{{ $category->name }}" class="w-full" /> -->
+                    <div class="swiper-slide" data-id="{{ $category->category_code }}">
+                        <a href="{{ \App\Support\ExploreMenuBuilder::listingUrl($category->category_code) }}" class="trending-item home-category-card block relative cursor-pointer">
+                            <div class="home-category-card__media">
                                 <img
-                                    src="{{ asset($category->image_path ? 'assets/images/products/categories/' . $category->image_path : 'assets/images/avatar/8.png') }}"
+                                    src="{{ $category->carouselImageUrl() }}"
                                     alt="{{ $category->name }}"
-                                    class="w-full" />
-
+                                    class="home-category-card__image"
+                                    loading="lazy"
+                                />
                             </div>
-                            <div class="trending-name text-center mt-5 duration-500">
+                            <div class="trending-name home-category-card__label text-center duration-500">
                                 <span class="category-heading" data-translate-key="{{ $translationkey }}">{{ $category->name }}</span>
-                                <!-- <span class="text-secondary"> ({{ rand(1, 20) }})</span> -->
                             </div>
                         </a>
                     </div>
@@ -111,6 +110,46 @@
         </div>
     </a>
     @endforeach
+</div>
+
+<div class="home-about-carousel md:pt-20 pt-10">
+    <div class="container">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+                <div class="caption1 text-button-uppercase tracking-[0.18em]">La Mira by Dairy Best</div>
+                <div class="heading3 md:mt-3 mt-2">Love at First Taste</div>
+                <div class="body1 text-secondary md:mt-4 mt-3 md:max-w-xl">
+                    Premium sauces, creams, and dessert ingredients crafted for cafés, bakeries, and professionals.
+                </div>
+            </div>
+            <a href="{{ route('innerpages.about-us') }}" class="button-main w-fit">Discover Our Story</a>
+        </div>
+
+        <div class="list-about-carousel relative section-swiper-navigation style-small-border style-outline pagination-mt40 md:mt-10 mt-6">
+            <div class="swiper-button-prev max-md:hidden"></div>
+            <div class="swiper swiper-about-showcase relative">
+                <div class="swiper-wrapper">
+                    @foreach ($aboutCarouselSlides as $slide)
+                    <div class="swiper-slide">
+                        <div class="about-carousel-slide relative overflow-hidden rounded-[28px]">
+                            <img
+                                src="{{ asset('assets/images/about-page-images/' . $slide['image']) }}"
+                                alt="{{ $slide['title'] }}"
+                                class="w-full h-full object-cover duration-700"
+                            />
+                            <div class="about-carousel-caption absolute bottom-0 left-0 w-full p-6 md:p-8">
+                                <div class="about-carousel-title">{{ $slide['title'] }}</div>
+                                <div class="about-carousel-desc mt-2">{{ $slide['caption'] }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="swiper-pagination-about"></div>
+            </div>
+            <div class="swiper-button-next max-md:hidden"></div>
+        </div>
+    </div>
 </div>
 
 
@@ -282,7 +321,7 @@
 
                     <div class="swiper-slide">
                         <a href="https://www.instagram.com/" target="_blank" class="item relative block rounded-[32px] overflow-hidden">
-                            <img src="{{ asset('assets/images/products/' . Str::slug($product->bname) . '/' . $product->productimage) }}" alt="0" class="h-full w-full duration-500 relative" />
+                            <img src="{{ $product->imageUrl() }}" alt="{{ $product->pname }}" class="h-full w-full duration-500 relative" />
                             <div class="icon w-12 h-12 bg-white hover:bg-black duration-500 flex items-center justify-center rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
                                 <div class="icon-instagram text-2xl text-black"></div>
                             </div>

@@ -58,206 +58,23 @@
     <div id="header" class="relative w-full">
         <div class="header-menu style-one absolute top-0 left-0 right-0 w-full md:h-[74px] h-[56px] bg-white">
             <div class="container mx-auto h-full">
-                <div class="header-main flex justify-between h-full">
-                    <div class="menu-mobile-icon lg:hidden flex items-center">
+                <div class="header-main flex items-center h-full w-full gap-4">
+                    <div class="menu-mobile-icon lg:hidden flex items-center shrink-0">
                         <i class="icon-category text-2xl"></i>
                     </div>
-                    <div class="left flex items-center ">
-                        <a href="{{ route('home') }}" class="logo text-3xl font-semibold text-center flex items-center gap-2">
-                            <img src="{{ asset('assets/images/home/logo.png')}}" alt="Dairy Best" class="logo">
+                    <a href="{{ route('home') }}" class="logo text-3xl font-semibold flex items-center shrink-0">
+                        <img src="{{ asset('assets/images/home/logo.png')}}" alt="Dairy Best" class="logo">
+                    </a>
 
-                        </a>
-
-                        <div class="menu-main h-full max-lg:hidden header-gap">
-                            <ul class="flex items-center gap-8 h-full">
+                    <div class="menu-main h-full max-lg:hidden header-gap ml-auto">
+                        <ul class="flex items-center justify-end h-full">
 
                                 <li class="h-full">
-                                    <a href="#!" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="products"> Explore </a>
-                                    <div class="mega-menu absolute top-[74px] left-0 bg-white w-screen">
-                                        <div class="container">
-                                            <div class="flex justify-between py-8">
-                                                <div class="banner-ads-block  basis-1/3">
-                                                    <a href="javascript:void(0)" class="banner-ads-item bg-linear rounded-2xl relative block overflow-hidden cursor-pointer mt-8">
-                                                        <div class="text-content py-14 pl-8 relative z-[1]">
-                                                            <!-- <div class="text-button-uppercase text-white bg-red px-2 py-0.5 inline-block rounded-sm">Save $10</div> -->
-                                                            <div class="heading6 mt-2">La - Mira</div>
-                                                            <!-- <div class="body1 mt-3 text-secondary">Starting at <span class="text-red">$59.99</span></div> -->
-                                                        </div>
-                                                        <img src="./assets/images/other/bg-feature.png" alt="bg-img" class="h-full w-auto absolute right-0 top-0 duration-700" />
-                                                    </a>
-                                                    <a href="javascript:void(0)" class="banner-ads-item bg-linear rounded-2xl relative block overflow-hidden cursor-pointer mt-8">
-                                                        <div class="text-content py-14 pl-8 relative z-[1]">
-                                                            <!-- <div class="text-button-uppercase text-white bg-red px-2 py-0.5 inline-block rounded-sm">Save $10</div> -->
-                                                            <div class="heading6 mt-2">Bono</div>
-                                                            <!-- <div class="body1 mt-3 text-secondary">Starting at <span class="text-red">$59.99</span></div> -->
-                                                        </div>
-                                                        <img src="./assets/images/other/bg-feature.png" alt="bg-img" class="h-full w-auto absolute right-0 top-0 duration-700" />
-                                                    </a>
-                                                </div>
-                                                <div class="nav-link basis-2/3 grid grid-cols-4 gap-y-8 pl-2.5">
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Drinks</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Tostato Coffee </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Speculoos Truffle </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Roll Wafer </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer "> Sea Salt Caramel </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer view-all-btn"> View All </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Biscuits</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Toffee Milk Chocolate </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Milk Choco </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 view-all-btn"> View All </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Fruit Puree</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Blue Raspberry</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Coconut </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Dragon </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Mango </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 view-all-btn"> View All </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Syrup</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Mint Syrup </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Mojito Syrup </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Pina Colada Syrup </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Cherry Syrup </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 view-all-btn"> View All </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Klija for you biscuits </div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> honey flavor black seed </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Cardamom Flavor </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> fennel flavor black seed </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> biscuits with coffee </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 view-all-btn"> View All </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Start oat biscuits</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Original </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> Honey Flavor </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> coconut flavour </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> biscuits without sugar </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 view-all-btn"> View All </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">bono star</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> bono star chocolate </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> bono star dark </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> bono star crunuch </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 view-all-btn"> View All </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Others</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> bono star chocolate </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> bono star dark </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> bono star crunuch </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 cursor-pointer"> bono star Chocolate </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300 view-all-btn"> View All </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <a href="{{ route('innerpages.Allproducts') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="products">Explore</a>
+                                    @include('partials.explore-mega-menu')
                                 </li>
                                 <li class="h-full">
-                                    <a href="{{ route('innerpages.Allproducts') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="category"> Products </a> </a>
+                                    <a href="{{ route('innerpages.Allproducts') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="category"> Products </a>
                                     <div class="mega-menu absolute top-[74px] left-0 bg-white w-screen">
                                         <!-- <div class="container">
                                             <div class="flex justify-between py-8">
@@ -485,16 +302,16 @@
                                 </li>
 
                                 <li class="h-full">
-                                    <a href="{{ route('innerpages.about-us') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="aboutus"> About Us </a> </a>
+                                    <a href="{{ route('innerpages.about-us') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="aboutus">About Us</a>
                                 </li>
                                 <li class="h-full">
-                                    <a href="{{ route('innerpages.contact-us') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="contactus"> Contact Us </a> </a>
+                                    <a href="{{ route('innerpages.business-distribution') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="distribution">Distribution</a>
+                                </li>
+                                <li class="h-full">
+                                    <a href="{{ route('innerpages.contact-us') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="contactus">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
-
-
                 </div>
             </div>
         </div>
@@ -1030,19 +847,19 @@
         <!-- Menu bar -->
         <div class="menu_bar fixed bg-white bottom-0 left-0 w-full h-[70px] sm:hidden z-[101]">
             <div class="menu_bar-inner grid grid-cols-4 items-center h-full">
-                <a href="index.html" class="menu_bar-link flex flex-col items-center ">
+                <a href="{{ route('home') }}" class="menu_bar-link flex flex-col items-center ">
                     <span class="ph-bold ph-house text-2xl block"></span>
                     <span class="menu_bar-title caption2 font-semibold">Home</span>
                 </a>
-                <a href="shop-filter-canvas.html" class="menu_bar-link flex flex-col items-center ">
+                <a href="{{ route('innerpages.Allproducts') }}" class="menu_bar-link flex flex-col items-center ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#000000" viewBox="0 0 256 256"><path d="M104,192a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16H96A8,8,0,0,1,104,192Zm72-8H160a8,8,0,0,0,0,16h16a8,8,0,0,0,0-16Zm-76-48a12,12,0,1,0-12-12A12,12,0,0,0,100,136Zm56,0a12,12,0,1,0-12-12A12,12,0,0,0,156,136Zm88.39-13.88A16,16,0,0,1,232,128H200v32a40,40,0,0,1-24,72H80a40,40,0,0,1-24-72V128H24A16,16,0,0,1,8.31,109,56.13,56.13,0,0,1,63.22,64h1.64A55.83,55.83,0,0,1,48,24a8,8,0,0,1,16,0,40,40,0,0,0,40,40h48a40,40,0,0,0,40-40,8,8,0,0,1,16,0,55.83,55.83,0,0,1-16.86,40h1.64a56.13,56.13,0,0,1,54.91,45A15.82,15.82,0,0,1,244.39,122.12ZM72,152.8a40.57,40.57,0,0,1,8-.8h96a40.57,40.57,0,0,1,8,.8V104a24,24,0,0,0-24-24H96a24,24,0,0,0-24,24ZM56,112v-8a39.81,39.81,0,0,1,8-24h-.8A40.09,40.09,0,0,0,24,112Zm144,80a24,24,0,0,0-24-24H80a24,24,0,0,0,0,48h96A24,24,0,0,0,200,192Zm32-80a40.08,40.08,0,0,0-39.2-32H192a39.81,39.81,0,0,1,8,24v8Z"></path></svg>
                     <span class="menu_bar-title caption2 font-semibold">Products</span>
                 </a>
-                <a href="shop-filter-canvas.html" class="menu_bar-link flex flex-col items-center ">
+                <a href="{{ route('innerpages.about-us') }}" class="menu_bar-link flex flex-col items-center ">
                 <span class="ph-bold ph-info text-2xl block"></span>
                     <span class="menu_bar-title caption2 font-semibold">About Us</span>
                 </a>
-                <a href="shop-filter-canvas.html" class="menu_bar-link flex flex-col items-center ">
+                <a href="{{ route('innerpages.contact-us') }}" class="menu_bar-link flex flex-col items-center ">
                 <span class="ph-bold ph-phone text-2xl block"></span>
                 <span class="menu_bar-title caption2 font-semibold">Contact</span>
                 </a>

@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const route = document.getElementById("productByTypeRoute").value;
+    const productByTypeRoute = document.getElementById("productByTypeRoute");
+    if (!productByTypeRoute) {
+        return;
+    }
+
+    const route = productByTypeRoute.value;
 
     const tabs = document.querySelectorAll(".menu-tab .tab-item");
     const productContainer = document.querySelector(".list-product.eight-product");
@@ -236,27 +241,30 @@ $(document).on('click', '.product-item', function() {
 // });
 
 
-document.querySelector('.list-type').addEventListener('click', function(e){
-    if(e.target.closest('.main-category')){
-        const category = e.target.closest('.main-category');
-        const subcategoryList = category.nextElementSibling;
+const listType = document.querySelector('.list-type');
+if (listType) {
+    listType.addEventListener('click', function(e){
+        if(e.target.closest('.main-category')){
+            const category = e.target.closest('.main-category');
+            const subcategoryList = category.nextElementSibling;
 
-        document.querySelectorAll('.subcategory-list').forEach(function(list){
-            if(list !== subcategoryList){
-                list.style.maxHeight = null;
-                list.classList.remove('show');
+            document.querySelectorAll('.subcategory-list').forEach(function(list){
+                if(list !== subcategoryList){
+                    list.style.maxHeight = null;
+                    list.classList.remove('show');
+                }
+            });
+
+            if(subcategoryList.style.maxHeight){
+                subcategoryList.style.maxHeight = null;
+                subcategoryList.classList.remove('show');
+            } else {
+                subcategoryList.classList.add('show');
+                subcategoryList.style.maxHeight = subcategoryList.scrollHeight + "px";
             }
-        });
-
-        if(subcategoryList.style.maxHeight){
-            subcategoryList.style.maxHeight = null;
-            subcategoryList.classList.remove('show');
-        } else {
-            subcategoryList.classList.add('show');
-            subcategoryList.style.maxHeight = subcategoryList.scrollHeight + "px";
         }
-    }
-});
+    });
+}
 
 
 
@@ -264,6 +272,34 @@ $(function () {
 
     const sidebar = $('.sidebar');
     const productContainer = $('.list-product-block');
+
+    function applyListingFiltersFromUrl() {
+        if (!sidebar.length) return;
+
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get('category');
+        const subcategory = params.get('subcategory');
+
+        if (category) {
+            const categoryHeading = sidebar.find(`.category-heading[data-cat-id="${category}"]`);
+
+            if (categoryHeading.length) {
+                categoryHeading.closest('.item').addClass('active');
+                const subList = categoryHeading.closest('.category-wrapper').find('.subcategory-list');
+
+                if (subList.length) {
+                    subList.addClass('show');
+                    subList[0].style.maxHeight = subList[0].scrollHeight + 'px';
+                }
+            }
+        }
+
+        if (subcategory) {
+            sidebar.find(`.subcategory-item[data-sub-id="${subcategory}"]`).addClass('active');
+        }
+    }
+
+    applyListingFiltersFromUrl();
 
     //-----------------------------------------
     // Fetch Products Function
@@ -461,6 +497,10 @@ function fetchFilteredCategories(selectedBrandIds) {
 function checkAndToggleCategoryBlock() {
     
     const categoryBlock = document.querySelector('.filter-type-block');
+    if (!categoryBlock) {
+        return;
+    }
+
     const categoryList = categoryBlock.querySelector('.list-type');
  
     if (!categoryList || categoryList.children.length === 0) {
@@ -471,4 +511,44 @@ function checkAndToggleCategoryBlock() {
 
         categoryBlock.style.display = 'block'; // show it
     }
+}
+
+function initAboutReveal() {
+    const revealElements = document.querySelectorAll('.about-reveal, .about-reveal-left, .about-reveal-right, .about-reveal-scale, .about-split-image.about-reveal-left, .about-split-image.about-reveal-right');
+    if (!revealElements.length) return;
+
+    const showElement = function (el) {
+        el.classList.add('is-visible');
+    };
+
+    if (!('IntersectionObserver' in window)) {
+        revealElements.forEach(showElement);
+        return;
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                showElement(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -20px 0px'
+    });
+
+    revealElements.forEach(function (el) {
+        const delay = el.dataset.aboutDelay;
+        if (delay) {
+            el.style.transitionDelay = delay + 'ms';
+        }
+        observer.observe(el);
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutReveal);
+} else {
+    initAboutReveal();
 }

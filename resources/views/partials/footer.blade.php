@@ -24,8 +24,9 @@
                         <div class="list-nav flex justify-between basis-2/3 max-md:basis-full gap-4">
                             <div class="item flex flex-col basis-1/3">
                                 <div class="text-button-uppercase pb-3">Infomation</div>
-                                <a class="caption1 has-line-before duration-300 w-fit" href="contact.html">Contact us </a>
-                                <a class="caption1 has-line-before duration-300 w-fit pt-2" href="javascript:void(0)"> About Us </a>
+                                <a class="caption1 has-line-before duration-300 w-fit" href="{{ route('innerpages.contact-us') }}">Contact us </a>
+                                <a class="caption1 has-line-before duration-300 w-fit pt-2" href="{{ route('innerpages.about-us') }}"> About Us </a>
+                                <a class="caption1 has-line-before duration-300 w-fit pt-2" href="{{ route('innerpages.business-distribution') }}"> Business & Distribution </a>
                                 <a class="caption1 has-line-before duration-300 w-fit pt-2" href="javascript:void(0)"> My Account</a>
                                 <a class="caption1 has-line-before duration-300 w-fit pt-2" href="javascript:void(0)"> Order & Returns</a>
                                 <a class="caption1 has-line-before duration-300 w-fit pt-2" href="javascript:void(0)">FAQs </a>

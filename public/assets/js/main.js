@@ -2421,6 +2421,45 @@ if (document.querySelector(".list-testimonial-yoga")) {
   });
 }
 
+// home about showcase carousel
+if (document.querySelector(".swiper-about-showcase")) {
+  var swiperAboutShowcase = new Swiper(".swiper-about-showcase", {
+    loop: true,
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      clickable: true,
+      el: ".swiper-about-showcase .swiper-pagination-about",
+    },
+    navigation: {
+      nextEl: ".home-about-carousel .swiper-button-next",
+      prevEl: ".home-about-carousel .swiper-button-prev",
+    },
+    slidesPerView: 1,
+    spaceBetween: 16,
+    breakpoints: {
+      640: {
+        slidesPerView: 1.15,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 1.5,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 28,
+      },
+      1280: {
+        slidesPerView: 2.2,
+        spaceBetween: 32,
+      },
+    },
+  });
+}
+
 // list-instagram
 var swiperListInstagram = new Swiper(".swiper-list-instagram", {
   pagination: { clickable: true, el: ".swiper-pagination" },

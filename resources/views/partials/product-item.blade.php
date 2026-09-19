@@ -5,8 +5,8 @@
 
                 <div class="product-img image-container   w-full h-full aspect-[3/4]">
                     <img class="w-full h-full object-cover duration-700"
-                        src="{{ asset('assets/images/products/' . Str::slug($product->bname) . '/' . $product->productimage) }}"
-                        alt="img">
+                        src="{{ $product->imageUrl() }}"
+                        alt="{{ $product->pname }}">
                 </div>
 
             </div>

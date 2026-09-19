@@ -29,6 +29,10 @@ Route::get('/about-us', function () {
     return view('innerpages.aboutus');
 })->name('innerpages.about-us');
 
+Route::get('/business-distribution', function () {
+    return view('innerpages.business-distribution');
+})->name('innerpages.business-distribution');
+
 Route::get('/contact-us', function () {
     return view('innerpages.contactus');
 })->name('innerpages.contact-us');
