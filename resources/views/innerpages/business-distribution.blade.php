@@ -145,43 +145,6 @@
             </div>
         </section>
 
-        <section class="dist-section dist-section--surface">
-            <div class="container md:py-20 py-14">
-                <div class="dist-section-header about-reveal">
-                    <div class="caption1 text-button-uppercase tracking-[0.18em]">Our brands</div>
-                    <div class="heading3 md:mt-3 mt-2">Two portfolios, one trusted supplier</div>
-                </div>
-                <div class="dist-brands-grid md:mt-12 mt-8">
-                    <div class="dist-brand-card about-reveal-left" data-about-delay="0">
-                        <div class="dist-brand-image">
-                            <img
-                                src="{{ asset('assets/images/about-page-images/mango-collection.png') }}"
-                                alt="La Mira dessert ingredients"
-                            />
-                        </div>
-                        <div class="dist-brand-content">
-                            <div class="heading5">La Mira</div>
-                            <p class="caption1 text-secondary mt-3">Premium dessert ingredients — sauces, creams, purees, syrups, ice cream mixes, and more.</p>
-                            <a href="{{ route('innerpages.product-listing', ['brandName' => 'la-mira']) }}" class="text-button-uppercase dist-brand-link mt-5 inline-block">View La Mira products</a>
-                        </div>
-                    </div>
-                    <div class="dist-brand-card about-reveal-right" data-about-delay="100">
-                        <div class="dist-brand-image">
-                            <img
-                                src="{{ asset('assets/images/about-page-images/chocolate-hazelnut-cream.png') }}"
-                                alt="Bono biscuits and cakes"
-                            />
-                        </div>
-                        <div class="dist-brand-content">
-                            <div class="heading5">Bono</div>
-                            <p class="caption1 text-secondary mt-3">Biscuits, cakes, and snack products for retail and food service channels.</p>
-                            <a href="{{ route('innerpages.product-listing', ['brandName' => 'bono']) }}" class="text-button-uppercase dist-brand-link mt-5 inline-block">View Bono products</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="dist-section">
             <div class="container md:py-20 py-14">
                 <div class="dist-split-feature about-reveal">

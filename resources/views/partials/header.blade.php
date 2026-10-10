@@ -59,7 +59,7 @@
         <div class="header-menu style-one absolute top-0 left-0 right-0 w-full md:h-[74px] h-[56px] bg-white">
             <div class="container mx-auto h-full">
                 <div class="header-main flex items-center h-full w-full gap-4">
-                    <div class="menu-mobile-icon lg:hidden flex items-center shrink-0" role="button" aria-label="Open explore menu" tabindex="0">
+                    <div class="menu-mobile-icon lg:hidden flex items-center shrink-0" role="button" aria-label="Open menu" tabindex="0">
                         <i class="icon-category text-2xl"></i>
                     </div>
                     <a href="{{ route('home') }}" class="logo text-3xl font-semibold flex items-center shrink-0">
@@ -70,235 +70,7 @@
                         <ul class="flex items-center justify-end h-full">
 
                                 <li class="h-full">
-                                    <a href="{{ route('innerpages.Allproducts') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="products">Explore</a>
-                                    @include('partials.explore-mega-menu')
-                                </li>
-                                <li class="h-full">
                                     <a href="{{ route('innerpages.Allproducts') }}" class="text-button-uppercase duration-300 h-full flex items-center justify-center" data-translate-key="category"> Products </a>
-                                    <div class="mega-menu absolute top-[74px] left-0 bg-white w-screen">
-                                        <!-- <div class="container">
-                                            <div class="flex justify-between py-8">
-                                                <div class="nav-link basis-2/3 flex justify-between pr-12">
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Shop Features</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="shop-breadcrumb-img.html" class="link text-secondary duration-300"> Shop Breadcrumb IMG </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0)" class="link text-secondary duration-300"> Shop Breadcrumb 1 </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-breadcrumb2.html" class="link text-secondary duration-300"> Shop Breadcrumb 2 </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-collection.html" class="link text-secondary duration-300"> Shop Collection </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Shop Features</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="shop-filter-canvas.html" class="link text-secondary duration-300"> Shop Filter Canvas </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-filter-options.html" class="link text-secondary duration-300"> Shop Filter Options </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-filter-dropdown.html" class="link text-secondary duration-300"> Shop Filter Dropdown </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-sidebar-list.html" class="link text-secondary duration-300"> Shop Sidebar List </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Shop Layout</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="shop-default.html" class="link text-secondary duration-300 cursor-pointer"> Shop Default </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-default-grid.html" class="link text-secondary duration-300 cursor-pointer"> Shop Default Grid </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-default-list.html" class="link text-secondary duration-300 cursor-pointer"> Shop Default List </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-fullwidth.html" class="link text-secondary duration-300 cursor-pointer"> Shop Full Width </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-square.html" class="link text-secondary duration-300"> Shop Square </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="checkout.html" class="link text-secondary duration-300"> Checkout </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="checkout2.html" class="link text-secondary duration-300"> Checkout Style 2 </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="nav-item">
-                                                        <div class="text-button-uppercase pb-2">Products Pages</div>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="wishlist.html" class="link text-secondary duration-300"> Wish List </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="search-result.html" class="link text-secondary duration-300"> Search Result </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="cart.html" class="link text-secondary duration-300"> Shopping Cart </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="login.html" class="link text-secondary duration-300"> Login/Register </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="forgot-password.html" class="link text-secondary duration-300"> Forgot Password </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="order-tracking.html" class="link text-secondary duration-300"> Order Tracking </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="my-account.html" class="link text-secondary duration-300"> My Account </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="recent-product pl-2.5 basis-1/3">
-                                                    <div class="text-button-uppercase pb-2">Recent Products</div>
-                                                    <div class="list-product hide-product-sold grid grid-cols-2 gap-5 mt-3">
-                                                        <div class="product-item grid-type" data-item="1">
-                                                            <div class="product-main cursor-pointer block">
-                                                                <div class="product-thumb bg-white relative overflow-hidden rounded-2xl">
-                                                                    <div class="product-tag text-button-uppercase bg-green px-3 py-0.5 inline-block rounded-full absolute top-3 left-3 z-[1]">New</div>
-                                                                    <div class="list-action-right absolute top-3 right-3 max-lg:hidden">
-                                                                        <div class="add-wishlist-btn w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white duration-300 relative">
-                                                                            <div class="tag-action bg-black text-white caption2 px-1.5 py-0.5 rounded-sm">Add To Wishlist</div>
-                                                                            <i class="ph ph-heart text-lg"></i>
-                                                                        </div>
-                                                                        <div class="compare-btn w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white duration-300 relative mt-2">
-                                                                            <div class="tag-action bg-black text-white caption2 px-1.5 py-0.5 rounded-sm">Compare Product</div>
-                                                                            <i class="ph ph-arrow-counter-clockwise text-lg compare-icon"></i>
-                                                                            <i class="ph ph-check-circle text-lg checked-icon"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-img w-full h-full aspect-[3/4]">
-                                                                        <img class="w-full h-full object-cover duration-700" src="./assets/images/product/1000x1000.png" alt="img" />
-                                                                        <img class="w-full h-full object-cover duration-700" src="./assets/images/product/1000x1000.png" alt="img" />
-                                                                    </div>
-                                                                    <div class="list-action grid grid-cols-2 gap-3 px-5 absolute w-full bottom-5 max-lg:hidden">
-                                                                        <div class="quick-view-btn w-full text-button-uppercase py-2 text-center rounded-full duration-300 bg-white hover:bg-black hover:text-white">Quick View</div>
-                                                                        <div class="add-cart-btn w-full text-button-uppercase py-2 text-center rounded-full duration-500 bg-white hover:bg-black hover:text-white">Add To Cart</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-infor mt-4 lg:mb-7">
-                                                                    <div class="product-sold sm:pb-4 pb-2">
-                                                                        <div class="progress bg-line h-1.5 w-full rounded-full overflow-hidden relative">
-                                                                            <div class="progress-sold bg-red absolute left-0 top-0 h-full"></div>
-                                                                        </div>
-                                                                        <div class="flex items-center justify-between gap-3 gap-y-1 flex-wrap mt-2">
-                                                                            <div class="text-button-uppercase">
-                                                                                <span class="text-secondary2 max-sm:text-xs">Sold: </span>
-                                                                                <span class="max-sm:text-xs">12</span>
-                                                                            </div>
-                                                                            <div class="text-button-uppercase">
-                                                                                <span class="text-secondary2 max-sm:text-xs">Available: </span>
-                                                                                <span class="max-sm:text-xs">88</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-name text-title duration-300">Faux-leather trousers</div>
-                                                                    <div class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
-                                                                        <div class="color-item bg-black w-8 h-8 rounded-full duration-300 relative">
-                                                                            <div class="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">Black</div>
-                                                                        </div>
-                                                                        <div class="color-item bg-green w-8 h-8 rounded-full duration-300 relative">
-                                                                            <div class="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">Green</div>
-                                                                        </div>
-                                                                        <div class="color-item bg-red w-8 h-8 rounded-full duration-300 relative">
-                                                                            <div class="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">Red</div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                                                        <div class="product-price text-title">$40.00</div>
-                                                                        <div class="product-origin-price caption1 text-secondary2">
-                                                                            <del>$50.00</del>
-                                                                        </div>
-                                                                        <div class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">-20%</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-item grid-type" data-item="3">
-                                                            <div class="product-main cursor-pointer block">
-                                                                <div class="product-thumb bg-white relative overflow-hidden rounded-2xl">
-                                                                    <div class="product-tag text-button-uppercase bg-green px-3 py-0.5 inline-block rounded-full absolute top-3 left-3 z-[1]">New</div>
-                                                                    <div class="list-action-right absolute top-3 right-3 max-lg:hidden">
-                                                                        <div class="add-wishlist-btn w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white duration-300 relative">
-                                                                            <div class="tag-action bg-black text-white caption2 px-1.5 py-0.5 rounded-sm">Add To Wishlist</div>
-                                                                            <i class="ph ph-heart text-lg"></i>
-                                                                        </div>
-                                                                        <div class="compare-btn w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white duration-300 relative mt-2">
-                                                                            <div class="tag-action bg-black text-white caption2 px-1.5 py-0.5 rounded-sm">Compare Product</div>
-                                                                            <i class="ph ph-arrow-counter-clockwise text-lg compare-icon"></i>
-                                                                            <i class="ph ph-check-circle text-lg checked-icon"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-img w-full h-full aspect-[3/4]">
-                                                                        <img class="w-full h-full object-cover duration-700" src="./assets/images/product/1000x1000.png" alt="img" />
-                                                                        <img class="w-full h-full object-cover duration-700" src="./assets/images/product/1000x1000.png" alt="img" />
-                                                                    </div>
-                                                                    <div class="list-action grid grid-cols-2 gap-3 px-5 absolute w-full bottom-5 max-lg:hidden">
-                                                                        <div class="quick-view-btn w-full text-button-uppercase py-2 text-center rounded-full duration-300 bg-white hover:bg-black hover:text-white">Quick View</div>
-                                                                        <div class="add-cart-btn w-full text-button-uppercase py-2 text-center rounded-full duration-500 bg-white hover:bg-black hover:text-white">Add To Cart</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-infor mt-4 lg:mb-7">
-                                                                    <div class="product-sold sm:pb-4 pb-2">
-                                                                        <div class="progress bg-line h-1.5 w-full rounded-full overflow-hidden relative">
-                                                                            <div class="progress-sold bg-red absolute left-0 top-0 h-full"></div>
-                                                                        </div>
-                                                                        <div class="flex items-center justify-between gap-3 gap-y-1 flex-wrap mt-2">
-                                                                            <div class="text-button-uppercase">
-                                                                                <span class="text-secondary2 max-sm:text-xs">Sold: </span>
-                                                                                <span class="max-sm:text-xs">12</span>
-                                                                            </div>
-                                                                            <div class="text-button-uppercase">
-                                                                                <span class="text-secondary2 max-sm:text-xs">Available: </span>
-                                                                                <span class="max-sm:text-xs">88</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-name text-title duration-300">Off-the-Shoulder Blouse</div>
-                                                                    <div class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
-                                                                        <div class="color-item bg-red w-8 h-8 rounded-full duration-300 relative">
-                                                                            <div class="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">Red</div>
-                                                                        </div>
-                                                                        <div class="color-item bg-yellow w-8 h-8 rounded-full duration-300 relative">
-                                                                            <div class="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">yellow</div>
-                                                                        </div>
-                                                                        <div class="color-item bg-green w-8 h-8 rounded-full duration-300 relative">
-                                                                            <div class="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">green</div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                                                        <div class="product-price text-title">$40.00</div>
-                                                                        <div class="product-origin-price caption1 text-secondary2">
-                                                                            <del>$50.00</del>
-                                                                        </div>
-                                                                        <div class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">-20%</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
                                 </li>
 
                                 <li class="h-full">
@@ -325,7 +97,9 @@
                             <div class="close-menu-mobile-btn absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface flex items-center justify-center">
                                 <i class="ph ph-x text-sm"></i>
                             </div>
-                            <span class="heading6 font-semibold" data-translate-key="products">Explore</span>
+                            <a href="{{ route('home') }}" class="logo flex items-center justify-center">
+                                <img src="{{ asset('assets/images/home/logo.png') }}" alt="Dairy Best" class="h-8 w-auto">
+                            </a>
                         </div>
                         <div class="form-search relative mt-2 shrink-0">
                             <i class="ph ph-magnifying-glass text-xl absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer"></i>

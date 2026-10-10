@@ -255,6 +255,37 @@ body {
     height: 50vh;
     padding-top: 20px;
 }
+
+.testimonial-block.home-promo-banner {
+  min-height: 360px;
+}
+
+.testimonial-block.home-promo-banner .half-screen-style {
+  min-height: 360px;
+  height: 58vh;
+  padding-top: 0;
+}
+
+.testimonial-block.home-promo-banner .bg-img img {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 768px) {
+  .testimonial-block.home-promo-banner,
+  .testimonial-block.home-promo-banner .half-screen-style {
+    min-height: 420px;
+    height: 62vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-block.home-promo-banner,
+  .testimonial-block.home-promo-banner .half-screen-style {
+    min-height: 520px;
+    height: 68vh;
+  }
+}
 .full-screen-style{
     height: 100vh;
 }

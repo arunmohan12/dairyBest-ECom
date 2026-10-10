@@ -176,7 +176,7 @@
     </div>
 </div>
 
-<div class="testimonial-block style-four relative">
+<div class="testimonial-block style-four home-promo-banner relative">
     <div class="container half-screen-style relative w-full h-full">
         <div class="content md:w-1/2 lg:py-[110px] py-16">
             <!-- <div class="heading4 font-normal normal-case">I absolutely love this shop! The products are high-quality and the customer service is excellent. I always leave with exactly what I need and a smile on my face.</div> -->
@@ -188,13 +188,13 @@
     </div>
 </div>
 
-<div class="benefit-block  md:py-20 py-10">
+<div class="benefit-block md:py-20 py-10">
     <div class="container">
         <div class="list-benefit grid items-start md:grid-cols-3 grid-cols-1 xl:gap-[160px] lg:gap-20 gap-10 gap-y-6">
             <div class="benefit-item flex flex-col items-center justify-center">
                 <i class="icon-double-leaves lg:text-7xl text-5xl"></i>
-                <div class="body1 font-semibold uppercase text-center mt-5">100% ORGANIC</div>
-                <div class="caption1 text-secondary text-center mt-2">We believe in skin that looks like skin and radiance that come naturally</div>
+                <div class="body1 font-semibold uppercase text-center mt-5">Premium Ingredients</div>
+                <div class="caption1 text-secondary text-center mt-2">Trusted dessert and bakery ingredients for cafés, patisseries, and food service across the UAE.</div>
             </div>
             <div class="benefit-item flex flex-col items-center justify-center">
                 <i class="icon-leaves lg:text-7xl text-5xl"></i>
@@ -210,6 +210,7 @@
     </div>
 </div>
 
+@if(false) {{-- Testimonials: hidden until real Dairy Best reviews are ready --}}
 <div class="testimonial-block md:pt-20 md:pb-16 pt-10 pb-8 md:mt-20 mt-10 bg-surface">
     <div class="container">
         <div class="heading3 text-center">Don't just take our word for it </div>
@@ -307,6 +308,7 @@
         </div>
     </div>
 </div>
+@endif
 
 <div class="instagram-block md:pt-20 pt-10">
     <div class="container">
