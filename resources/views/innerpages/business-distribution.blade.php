@@ -75,22 +75,30 @@
                 </div>
                 <div class="dist-audience-grid md:mt-12 mt-8">
                     <div class="dist-audience-card about-reveal" data-about-delay="0">
-                        <i class="ph ph-coffee text-4xl"></i>
+                        <div class="dist-audience-card__icon" aria-hidden="true">
+                            <i class="ph-bold ph-coffee"></i>
+                        </div>
                         <div class="heading6 mt-5">Cafés & coffee shops</div>
                         <p class="caption1 text-secondary mt-2">Sauces, syrups, and beverage bases for signature drinks and desserts.</p>
                     </div>
                     <div class="dist-audience-card about-reveal" data-about-delay="100">
-                        <i class="ph ph-cake text-4xl"></i>
+                        <div class="dist-audience-card__icon" aria-hidden="true">
+                            <i class="ph-bold ph-cake"></i>
+                        </div>
                         <div class="heading6 mt-5">Bakeries & patisseries</div>
                         <p class="caption1 text-secondary mt-2">Creams, fillings, and glazes for pastries, donuts, and plated desserts.</p>
                     </div>
                     <div class="dist-audience-card about-reveal" data-about-delay="200">
-                        <i class="ph ph-building text-4xl"></i>
+                        <div class="dist-audience-card__icon" aria-hidden="true">
+                            <i class="ph-bold ph-buildings"></i>
+                        </div>
                         <div class="heading6 mt-5">Restaurants & hotels</div>
                         <p class="caption1 text-secondary mt-2">Consistent ingredients for high-volume kitchens and premium menus.</p>
                     </div>
                     <div class="dist-audience-card about-reveal" data-about-delay="300">
-                        <i class="ph ph-factory text-4xl"></i>
+                        <div class="dist-audience-card__icon" aria-hidden="true">
+                            <i class="ph-bold ph-factory"></i>
+                        </div>
                         <div class="heading6 mt-5">Manufacturers & caterers</div>
                         <p class="caption1 text-secondary mt-2">Bulk supply for production lines, events, and food service operations.</p>
                     </div>
@@ -131,43 +139,6 @@
                         <div class="dist-timeline-body">
                             <div class="heading6">Ongoing support</div>
                             <p class="caption1 dist-timeline-text mt-2">Dedicated account help for new ranges, seasonal launches, and growth.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="dist-section dist-section--surface">
-            <div class="container md:py-20 py-14">
-                <div class="dist-section-header about-reveal">
-                    <div class="caption1 text-button-uppercase tracking-[0.18em]">Our brands</div>
-                    <div class="heading3 md:mt-3 mt-2">Two portfolios, one trusted supplier</div>
-                </div>
-                <div class="dist-brands-grid md:mt-12 mt-8">
-                    <div class="dist-brand-card about-reveal-left" data-about-delay="0">
-                        <div class="dist-brand-image">
-                            <img
-                                src="{{ asset('assets/images/about-page-images/mango-collection.png') }}"
-                                alt="La Mira dessert ingredients"
-                            />
-                        </div>
-                        <div class="dist-brand-content">
-                            <div class="heading5">La Mira</div>
-                            <p class="caption1 text-secondary mt-3">Premium dessert ingredients — sauces, creams, purees, syrups, ice cream mixes, and more.</p>
-                            <a href="{{ route('innerpages.product-listing', ['brandName' => 'la-mira']) }}" class="text-button-uppercase dist-brand-link mt-5 inline-block">View La Mira products</a>
-                        </div>
-                    </div>
-                    <div class="dist-brand-card about-reveal-right" data-about-delay="100">
-                        <div class="dist-brand-image">
-                            <img
-                                src="{{ asset('assets/images/about-page-images/chocolate-hazelnut-cream.png') }}"
-                                alt="Bono biscuits and cakes"
-                            />
-                        </div>
-                        <div class="dist-brand-content">
-                            <div class="heading5">Bono</div>
-                            <p class="caption1 text-secondary mt-3">Biscuits, cakes, and snack products for retail and food service channels.</p>
-                            <a href="{{ route('innerpages.product-listing', ['brandName' => 'bono']) }}" class="text-button-uppercase dist-brand-link mt-5 inline-block">View Bono products</a>
                         </div>
                     </div>
                 </div>
